@@ -10,9 +10,9 @@ class AppIcons {
   static const foods = "${_prefix}foods.png";
   static const gadget = "${_prefix}gadget.png";
   static const gift = "${_prefix}gift.png";
-  static const history = "${_prefix}home.png";
-  static const home = "${_prefix}account.png";
-  static const notification = "${_prefix}history.png";
+  static const history = "${_prefix}history.png";
+  static const home = "${_prefix}home.png";
+  static const notification = "${_prefix}notification.png";
   static const wishlist = "${_prefix}wishlist.png";
   static const bag = "${_prefix}bag.png";
   static const rating = "${_prefix}rating.png";
