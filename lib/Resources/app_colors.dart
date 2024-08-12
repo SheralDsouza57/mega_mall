@@ -8,4 +8,5 @@ class AppColors {
   static const davisGrey = Color(0xFFC4C5C4);
   static const featherGrey = Color(0xFFEDEDED);
   static const darkGrey = Color(0xFF393F42);
+  static const lightGrey = Color(0xFFC4C5C4);
 }
