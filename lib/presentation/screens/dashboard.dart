@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mega_mall/Resources/app_colors.dart';
-import 'package:mega_mall/Resources/app_icons.dart';
+import 'package:mega_mall/resources/app_colors.dart';
+import 'package:mega_mall/resources/app_icons.dart';
 import 'package:mega_mall/presentation/screens/home.dart';
 
 class Dashboard extends StatefulWidget {

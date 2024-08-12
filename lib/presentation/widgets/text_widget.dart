@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mega_mall/Resources/app_fonts.dart';
+import 'package:mega_mall/resources/app_fonts.dart';
 
 class TextWidget extends StatelessWidget {
   const TextWidget({
@@ -29,7 +29,7 @@ class TextWidget extends StatelessWidget {
       style: TextStyle(
         overflow: TextOverflow.ellipsis,
         color: color,
-        fontFamily: AppFonts.inter,
+        fontFamily: AppFonts.dmSans,
         fontSize: fontsize,
         fontWeight: fontweight,
         decoration: underline,
