@@ -19,4 +19,5 @@ class AppIcons {
   static const activeLike = "${_prefix}active_like.png";
   static const like = "${_prefix}like.png";
   static const back = "${_prefix}back.png";
+  static const search = "${_prefix}search.png";
 }

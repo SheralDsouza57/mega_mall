@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mega_mall/Resources/app_colors.dart';
-import 'package:mega_mall/Resources/app_icons.dart';
+import 'package:mega_mall/resources/app_colors.dart';
+import 'package:mega_mall/resources/app_icons.dart';
+import 'package:mega_mall/presentation/screens/home.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -13,7 +14,7 @@ class _DashboardState extends State<Dashboard> {
   int currentIndex = 0;
 
   final List<Widget> view = [
-    const Center(child: Text('Home')),
+    const Center(child: Home()),
     const Center(child: Text('Wishlist')),
     const Center(child: Text('History')),
     const Center(child: Text('Account')),
