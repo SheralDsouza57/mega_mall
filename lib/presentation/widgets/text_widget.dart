@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mega_mall/resources/app_fonts.dart';
 
 class TextWidget extends StatelessWidget {
   const TextWidget({
@@ -10,6 +9,7 @@ class TextWidget extends StatelessWidget {
     required this.text,
     this.underline,
     this.textAlign,
+    required this.fontFamily,
   });
 
   final Color? color;
@@ -18,18 +18,19 @@ class TextWidget extends StatelessWidget {
   final String text;
   final TextDecoration? underline;
   final TextAlign? textAlign;
+  final String? fontFamily;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       textAlign: textAlign,
-      maxLines: 5,
+      maxLines: 1,
       softWrap: true,
       style: TextStyle(
         overflow: TextOverflow.ellipsis,
         color: color,
-        fontFamily: AppFonts.dmSans,
+        fontFamily: fontFamily,
         fontSize: fontsize,
         fontWeight: fontweight,
         decoration: underline,
