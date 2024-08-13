@@ -16,24 +16,15 @@ class BounceEffect extends StatefulWidget {
 
 class _BounceEffectState extends State<BounceEffect> {
   double _scale = 1;
-  // List<BoxShadow> _boxShadow = [];
 
   void _startBounceAnimation() {
     setState(() {
       _scale = 0.95;
-      // _boxShadow = [
-      //   const BoxShadow(
-      //     color: Colors.black26,
-      //     offset: Offset(0, 4),
-      //     blurRadius: 8.0,
-      //   ),
-      // ];
     });
 
     Future.delayed(const Duration(milliseconds: 100), () {
       setState(() {
         _scale = 1;
-        // _boxShadow = [];
       });
     });
   }
@@ -48,9 +39,6 @@ class _BounceEffectState extends State<BounceEffect> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
         transform: Matrix4.identity()..scale(_scale),
-        // decoration: BoxDecoration(
-        //   boxShadow: _boxShadow,
-        // ),
         child: widget.child,
       ),
     );

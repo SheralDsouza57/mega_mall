@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_mall/data/datasources/home_data.dart';
+import 'package:mega_mall/presentation/screens/detail.dart';
 import 'package:mega_mall/presentation/widgets/add_to_cart_button.dart';
 import 'package:mega_mall/presentation/widgets/bounce_effect.dart';
 import 'package:mega_mall/presentation/widgets/category_card.dart';
@@ -62,7 +63,9 @@ class _HomeState extends State<Home> {
                       fontFamily: AppFonts.dmSans,
                       fontSize: 14),
                   suffixIcon: BounceEffect(
-                      onTap: () {}, child: const Icon(Icons.search)),
+                    onTap: () {},
+                    child: const Icon(Icons.search),
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide.none,
@@ -167,12 +170,38 @@ class _HomeState extends State<Home> {
                   ),
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return ProductCard(
-                      addToCartButton: BounceEffect(
-                          onTap: () {}, child: const AddToCartButton()),
-                      product: homeData.products[index],
-                      productName: homeData.productName[index],
-                      productPrice: homeData.productPrice[index],
+                    return Stack(
+                      children: [
+                        ProductCard(
+                          product: homeData.products[index],
+                          productName: homeData.productName[index],
+                          productPrice: homeData.productPrice[index],
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Detail(
+                                        productImage: homeData.products[index],
+                                        productTitle:
+                                            homeData.productName[index],
+                                        productPrice:
+                                            homeData.productPrice[index],
+                                        productRating: homeData.rating[index],
+                                        productReview: homeData.review[index],
+                                        productDescription:
+                                            homeData.description[index],
+                                      )),
+                            );
+                          },
+                        ),
+                        Positioned(
+                          bottom: 18.h,
+                          left: 10.w,
+                          child: AddToCartButton(
+                            onTap: () {},
+                          ),
+                        )
+                      ],
                     );
                   },
                 ),

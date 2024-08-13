@@ -5,8 +5,8 @@ import 'package:mega_mall/presentation/widgets/text_widget.dart';
 import 'package:mega_mall/resources/app_colors.dart';
 import 'package:mega_mall/resources/app_fonts.dart';
 
-class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({
+class BuyNowButton extends StatelessWidget {
+  const BuyNowButton({
     super.key,
     required this.onTap,
   });
@@ -15,27 +15,22 @@ class AddToCartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BounceEffect(
-      onTap: onTap,
+      onTap: () {},
       child: Container(
-        height: 31.h,
-        width: 110.w,
         decoration: BoxDecoration(
           color: AppColors.blue,
-          borderRadius: BorderRadius.circular(4.r),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black26,
-              offset: Offset(0, 4),
-              blurRadius: 8.0,
-            ),
-          ],
+          borderRadius: BorderRadius.all(
+            Radius.circular(4.r),
+          ),
         ),
+        width: 210.w,
         child: Center(
           child: TextWidget(
-            text: 'Add to Cart',
+            text: 'Buy Now',
             fontFamily: AppFonts.inter,
-            fontsize: 12.h,
             color: AppColors.white,
+            fontsize: 16.h,
+            fontweight: FontWeight.w600,
           ),
         ),
       ),

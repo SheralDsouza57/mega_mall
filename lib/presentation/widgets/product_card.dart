@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_mall/presentation/widgets/add_to_cart_button.dart';
+import 'package:mega_mall/presentation/widgets/bounce_effect.dart';
 import 'package:mega_mall/presentation/widgets/text_widget.dart';
 import 'package:mega_mall/resources/app_colors.dart';
 import 'package:mega_mall/resources/app_fonts.dart';
@@ -11,18 +12,16 @@ class ProductCard extends StatelessWidget {
     required this.product,
     required this.productName,
     required this.productPrice,
-    required this.addToCartButton,
+    required this.onTap,
   });
   final String product;
   final String productName;
   final String productPrice;
-  final Widget addToCartButton;
-
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return InkResponse(
-      radius: 60.r,
-      onTap: () {},
+    return BounceEffect(
+      onTap: onTap,
       child: Container(
         width: 130.w,
         height: 195.h,
@@ -41,12 +40,14 @@ class ProductCard extends StatelessWidget {
             Image.asset(
               product,
               width: 170.w,
-              height: 81.h,
+              height: 90.h,
+              fit: BoxFit.fill,
             ),
             SizedBox(height: 11.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 11.w),
               child: TextWidget(
+                maxlines: 1,
                 text: productName,
                 color: AppColors.darkGrey,
                 fontsize: 12.h,
@@ -63,7 +64,7 @@ class ProductCard extends StatelessWidget {
               fontFamily: AppFonts.inter,
             ),
             SizedBox(height: 11.h),
-            addToCartButton,
+            // addToCartButton,
             SizedBox(height: 13.h),
           ],
         ),
