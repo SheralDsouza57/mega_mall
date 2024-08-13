@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_mall/presentation/widgets/bounce_effect.dart';
 import 'package:mega_mall/presentation/widgets/text_widget.dart';
 import 'package:mega_mall/resources/app_colors.dart';
 import 'package:mega_mall/resources/app_fonts.dart';
@@ -18,10 +19,13 @@ class CategoryCard extends StatelessWidget {
       padding: EdgeInsets.only(right: 15.r),
       child: Column(
         children: [
-          Image.asset(
-            image,
-            width: 48.w,
-            height: 48.h,
+          BounceEffect(
+            onTap: () {},
+            child: Image.asset(
+              image,
+              width: 48.w,
+              height: 48.h,
+            ),
           ),
           SizedBox(height: 8.h),
           TextWidget(

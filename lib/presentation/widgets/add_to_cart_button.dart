@@ -15,9 +15,15 @@ class AddToCartButton extends StatelessWidget {
       height: 31.h,
       width: 110.w,
       decoration: BoxDecoration(
-        color: AppColors.blue,
-        borderRadius: BorderRadius.circular(4.r),
-      ),
+          color: AppColors.blue,
+          borderRadius: BorderRadius.circular(4.r),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0, 4),
+              blurRadius: 8.0,
+            ),
+          ]),
       child: Center(
         child: TextWidget(
           text: 'Add to Cart',

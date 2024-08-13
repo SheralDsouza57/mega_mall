@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_mall/data/datasources/home_data.dart';
+import 'package:mega_mall/presentation/widgets/add_to_cart_button.dart';
+import 'package:mega_mall/presentation/widgets/bounce_effect.dart';
 import 'package:mega_mall/presentation/widgets/category_card.dart';
 import 'package:mega_mall/presentation/widgets/product_card.dart';
 import 'package:mega_mall/resources/app_colors.dart';
@@ -35,9 +37,12 @@ class _HomeState extends State<Home> {
             ),
             Row(
               children: [
-                Image.asset(AppIcons.notification),
+                InkResponse(
+                  onTap: () {},
+                  child: Image.asset(AppIcons.notification),
+                ),
                 SizedBox(width: 20.w),
-                Image.asset(AppIcons.cart),
+                InkResponse(onTap: () {}, child: Image.asset(AppIcons.cart)),
               ],
             ),
           ],
@@ -99,12 +104,16 @@ class _HomeState extends State<Home> {
                     fontweight: FontWeight.w500,
                     fontFamily: AppFonts.dmSans,
                   ),
-                  TextWidget(
-                    text: 'See All',
-                    color: AppColors.blue,
-                    fontsize: 12.h,
-                    fontweight: FontWeight.w500,
-                    fontFamily: AppFonts.dmSans,
+                  InkResponse(
+                    radius: 10.r,
+                    onTap: () {},
+                    child: TextWidget(
+                      text: 'See All',
+                      color: AppColors.blue,
+                      fontsize: 12.h,
+                      fontweight: FontWeight.w500,
+                      fontFamily: AppFonts.dmSans,
+                    ),
                   ),
                 ],
               ),
@@ -132,12 +141,16 @@ class _HomeState extends State<Home> {
                     fontweight: FontWeight.w500,
                     fontFamily: AppFonts.dmSans,
                   ),
-                  TextWidget(
-                    text: 'See All',
-                    color: AppColors.blue,
-                    fontsize: 12.h,
-                    fontweight: FontWeight.w500,
-                    fontFamily: AppFonts.dmSans,
+                  InkResponse(
+                    radius: 10.r,
+                    onTap: () {},
+                    child: TextWidget(
+                      text: 'See All',
+                      color: AppColors.blue,
+                      fontsize: 12.h,
+                      fontweight: FontWeight.w500,
+                      fontFamily: AppFonts.dmSans,
+                    ),
                   ),
                 ],
               ),
@@ -154,6 +167,8 @@ class _HomeState extends State<Home> {
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ProductCard(
+                      addToCartButton: BounceEffect(
+                          onTap: () {}, child: const AddToCartButton()),
                       product: homeData.products[index],
                       productName: homeData.productName[index],
                       productPrice: homeData.productPrice[index],

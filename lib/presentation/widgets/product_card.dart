@@ -11,57 +11,62 @@ class ProductCard extends StatelessWidget {
     required this.product,
     required this.productName,
     required this.productPrice,
+    required this.addToCartButton,
   });
   final String product;
   final String productName;
   final String productPrice;
+  final Widget addToCartButton;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 130.w,
-      height: 195.h,
-      decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(10.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.15),
-              spreadRadius: 0,
-              blurRadius: 20,
-              offset: const Offset(0, 4),
-            )
-          ]),
-      child: Column(
-        children: [
-          Image.asset(
-            product,
-            width: 170.w,
-            height: 81.h,
-          ),
-          SizedBox(height: 11.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 11.w),
-            child: TextWidget(
-              text: productName,
+    return InkResponse(
+      radius: 60.r,
+      onTap: () {},
+      child: Container(
+        width: 130.w,
+        height: 195.h,
+        decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(10.r),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                offset: Offset(0, 4),
+                blurRadius: 8.0,
+              )
+            ]),
+        child: Column(
+          children: [
+            Image.asset(
+              product,
+              width: 170.w,
+              height: 81.h,
+            ),
+            SizedBox(height: 11.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 11.w),
+              child: TextWidget(
+                text: productName,
+                color: AppColors.darkGrey,
+                fontsize: 12.h,
+                fontweight: FontWeight.w500,
+                fontFamily: AppFonts.inter,
+              ),
+            ),
+            SizedBox(height: 4.h),
+            TextWidget(
+              text: productPrice,
               color: AppColors.darkGrey,
-              fontsize: 12.h,
-              fontweight: FontWeight.w500,
+              fontsize: 14.h,
+              fontweight: FontWeight.w600,
               fontFamily: AppFonts.inter,
             ),
-          ),
-          SizedBox(height: 4.h),
-          TextWidget(
-            text: productPrice,
-            color: AppColors.darkGrey,
-            fontsize: 14.h,
-            fontweight: FontWeight.w600,
-            fontFamily: AppFonts.inter,
-          ),
-          SizedBox(height: 11.h),
-          const AddToCartButton(),
-          SizedBox(height: 13.h),
-        ],
+            SizedBox(height: 11.h),
+            addToCartButton,
+            SizedBox(height: 13.h),
+          ],
+        ),
       ),
     );
   }
