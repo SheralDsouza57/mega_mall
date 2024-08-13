@@ -56,7 +56,11 @@ class _DetailState extends State<Detail> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: Image.asset(AppIcons.back),
+                            child: Image.asset(
+                              AppIcons.back,
+                              width: 35.w,
+                              height: 35.h,
+                            ),
                           ),
                         ),
                         Positioned(
@@ -68,9 +72,13 @@ class _DetailState extends State<Detail> {
                                 isLikeTapped = !isLikeTapped;
                               });
                             },
-                            child: Image.asset(isLikeTapped
-                                ? AppIcons.activeLike
-                                : AppIcons.like),
+                            child: Image.asset(
+                              isLikeTapped
+                                  ? AppIcons.activeLike
+                                  : AppIcons.like,
+                              width: 35.w,
+                              height: 35.h,
+                            ),
                           ),
                         ),
                       ],
