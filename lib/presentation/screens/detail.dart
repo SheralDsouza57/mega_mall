@@ -41,7 +41,7 @@ class Detail extends StatelessWidget {
                       productImage,
                       width: double.infinity,
                       height: 325.h,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                     ),
                     SizedBox(height: 8.h),
                     Padding(

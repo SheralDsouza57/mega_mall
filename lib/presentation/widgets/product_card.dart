@@ -40,7 +40,7 @@ class ProductCard extends StatelessWidget {
             Image.asset(
               product,
               width: 170.w,
-              height: 81.h,
+              height: 90.h,
               fit: BoxFit.fill,
             ),
             SizedBox(height: 11.h),
