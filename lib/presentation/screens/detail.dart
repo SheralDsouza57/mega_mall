@@ -38,7 +38,7 @@ class Detail extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      AppImages.product1,
+                      productImage,
                       width: double.infinity,
                       height: 325.h,
                       fit: BoxFit.fill,
@@ -53,15 +53,19 @@ class Detail extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              TextWidget(
-                                text: 'Nike Shoes',
-                                fontFamily: AppFonts.dmSans,
-                                fontsize: 18.h,
-                                fontweight: FontWeight.w600,
-                                color: AppColors.navyBlue,
+                              SizedBox(
+                                width: 220.w,
+                                child: TextWidget(
+                                  maxlines: 2,
+                                  text: productTitle,
+                                  fontFamily: AppFonts.dmSans,
+                                  fontsize: 18.h,
+                                  fontweight: FontWeight.w600,
+                                  color: AppColors.navyBlue,
+                                ),
                               ),
                               TextWidget(
-                                text: '\$430',
+                                text: productPrice,
                                 fontFamily: AppFonts.dmSans,
                                 fontsize: 14.h,
                                 fontweight: FontWeight.w600,
@@ -80,7 +84,7 @@ class Detail extends StatelessWidget {
                               ),
                               SizedBox(width: 4.w),
                               TextWidget(
-                                text: '4.5',
+                                text: productRating,
                                 fontFamily: AppFonts.dmSans,
                                 fontsize: 12.h,
                                 fontweight: FontWeight.w600,
@@ -89,7 +93,7 @@ class Detail extends StatelessWidget {
                               BounceEffect(
                                 onTap: () {},
                                 child: TextWidget(
-                                  text: '(20 Reviews)',
+                                  text: '($productReview Reviews)',
                                   fontFamily: AppFonts.dmSans,
                                   fontsize: 12.h,
                                   fontweight: FontWeight.w600,
@@ -110,7 +114,7 @@ class Detail extends StatelessWidget {
                           TextWidget(
                             maxlines: 20,
                             textAlign: TextAlign.justify,
-                            text: homeData.description[0],
+                            text: productDescription,
                             fontFamily: AppFonts.dmSans,
                             fontsize: 12.h,
                             fontweight: FontWeight.w600,

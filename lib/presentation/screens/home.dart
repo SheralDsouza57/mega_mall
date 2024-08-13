@@ -182,11 +182,14 @@ class _HomeState extends State<Home> {
                               MaterialPageRoute(
                                   builder: (context) => Detail(
                                         productImage: homeData.products[index],
-                                        productTitle: '',
-                                        productPrice: '',
-                                        productRating: '',
-                                        productReview: '',
-                                        productDescription: '',
+                                        productTitle:
+                                            homeData.productName[index],
+                                        productPrice:
+                                            homeData.productPrice[index],
+                                        productRating: homeData.rating[index],
+                                        productReview: homeData.review[index],
+                                        productDescription:
+                                            homeData.description[index],
                                       )),
                             );
                           },
