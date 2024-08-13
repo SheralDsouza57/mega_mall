@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mega_mall/presentation/screens/dashboard.dart';
-import 'package:mega_mall/presentation/screens/detail.dart';
 import 'package:mega_mall/presentation/screens/home.dart';
 
 void main() {

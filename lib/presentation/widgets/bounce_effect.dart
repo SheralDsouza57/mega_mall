@@ -9,9 +9,8 @@ class BounceEffect extends StatefulWidget {
     required this.child,
     required this.onTap,
   });
-
   @override
-  _BounceEffectState createState() => _BounceEffectState();
+  State<BounceEffect> createState() => _BounceEffectState();
 }
 
 class _BounceEffectState extends State<BounceEffect> {

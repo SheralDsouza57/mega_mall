@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mega_mall/data/datasources/home_data.dart';
 import 'package:mega_mall/presentation/widgets/bounce_effect.dart';
 import 'package:mega_mall/presentation/widgets/buy_now_button.dart';
 import 'package:mega_mall/presentation/widgets/text_widget.dart';
