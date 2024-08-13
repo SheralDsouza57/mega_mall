@@ -61,7 +61,8 @@ class _HomeState extends State<Home> {
                       color: AppColors.lightGrey,
                       fontFamily: AppFonts.dmSans,
                       fontSize: 14),
-                  suffixIcon: const Icon(Icons.search),
+                  suffixIcon: BounceEffect(
+                      onTap: () {}, child: const Icon(Icons.search)),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide.none,
