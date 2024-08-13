@@ -41,6 +41,7 @@ class ProductCard extends StatelessWidget {
               product,
               width: 170.w,
               height: 81.h,
+              fit: BoxFit.fill,
             ),
             SizedBox(height: 11.h),
             Padding(
