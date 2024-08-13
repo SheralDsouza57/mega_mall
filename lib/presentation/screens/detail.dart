@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_mall/data/datasources/home_data.dart';
 import 'package:mega_mall/presentation/widgets/bounce_effect.dart';
@@ -7,9 +9,8 @@ import 'package:mega_mall/presentation/widgets/text_widget.dart';
 import 'package:mega_mall/resources/app_colors.dart';
 import 'package:mega_mall/resources/app_fonts.dart';
 import 'package:mega_mall/resources/app_icons.dart';
-import 'package:mega_mall/resources/app_images.dart';
 
-class Detail extends StatelessWidget {
+class Detail extends StatefulWidget {
   const Detail(
       {super.key,
       required this.productImage,
@@ -27,6 +28,12 @@ class Detail extends StatelessWidget {
   final String productDescription;
 
   @override
+  State<Detail> createState() => _DetailState();
+}
+
+class _DetailState extends State<Detail> {
+  bool isLikeTapped = false;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -37,11 +44,39 @@ class Detail extends StatelessWidget {
               child: SizedBox(
                 child: Column(
                   children: [
-                    Image.asset(
-                      productImage,
-                      width: double.infinity,
-                      height: 325.h,
-                      fit: BoxFit.cover,
+                    Stack(
+                      children: [
+                        Image.asset(
+                          widget.productImage,
+                          width: double.infinity,
+                          height: 325.h,
+                          fit: BoxFit.cover,
+                        ),
+                        Positioned(
+                          top: 64.h,
+                          left: 16.w,
+                          child: BounceEffect(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Image.asset(AppIcons.back),
+                          ),
+                        ),
+                        Positioned(
+                          top: 64.h,
+                          right: 16.w,
+                          child: BounceEffect(
+                            onTap: () {
+                              setState(() {
+                                isLikeTapped = !isLikeTapped;
+                              });
+                            },
+                            child: Image.asset(isLikeTapped
+                                ? AppIcons.activeLike
+                                : AppIcons.like),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 8.h),
                     Padding(
@@ -57,7 +92,7 @@ class Detail extends StatelessWidget {
                                 width: 220.w,
                                 child: TextWidget(
                                   maxlines: 2,
-                                  text: productTitle,
+                                  text: widget.productTitle,
                                   fontFamily: AppFonts.dmSans,
                                   fontsize: 18.h,
                                   fontweight: FontWeight.w600,
@@ -65,7 +100,7 @@ class Detail extends StatelessWidget {
                                 ),
                               ),
                               TextWidget(
-                                text: productPrice,
+                                text: widget.productPrice,
                                 fontFamily: AppFonts.dmSans,
                                 fontsize: 14.h,
                                 fontweight: FontWeight.w600,
@@ -84,7 +119,7 @@ class Detail extends StatelessWidget {
                               ),
                               SizedBox(width: 4.w),
                               TextWidget(
-                                text: productRating,
+                                text: widget.productRating,
                                 fontFamily: AppFonts.dmSans,
                                 fontsize: 12.h,
                                 fontweight: FontWeight.w600,
@@ -93,7 +128,7 @@ class Detail extends StatelessWidget {
                               BounceEffect(
                                 onTap: () {},
                                 child: TextWidget(
-                                  text: '($productReview Reviews)',
+                                  text: '(${widget.productReview} Reviews)',
                                   fontFamily: AppFonts.dmSans,
                                   fontsize: 12.h,
                                   fontweight: FontWeight.w600,
@@ -114,7 +149,7 @@ class Detail extends StatelessWidget {
                           TextWidget(
                             maxlines: 20,
                             textAlign: TextAlign.justify,
-                            text: productDescription,
+                            text: widget.productDescription,
                             fontFamily: AppFonts.dmSans,
                             fontsize: 12.h,
                             fontweight: FontWeight.w600,
