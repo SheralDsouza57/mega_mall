@@ -9,4 +9,9 @@ class AppColors {
   static const lightGrey = Color(0xFFC4C5C4);
   static const timidGrey = Color(0xFF9B9999);
   static const grey = Color(0xFF7D7A7A);
+  static const oliveGreen = Color(0xFF013220);
+  static const skyBlue = Color(0xFFC2E9FF);
+  static const babyPink = Color(0xFFedd9f8);
+  static const beige = Color(0xFFfef7ea);
+  static const lightBlue = Color(0xFFcaecff);
 }

@@ -15,4 +15,11 @@ class AppImages {
   static const product8 = "${_prefix}product8.png";
   static const product9 = "${_prefix}product9.png";
   static const product10 = "${_prefix}product10.png";
+  static const upiImage = "${_prefix}upi_image.png";
+  static const buyCoins = "${_prefix}buy_coins.png";
+  static const offers = "${_prefix}offers.png";
+  static const payAtStore = "${_prefix}pay_at_store.png";
+  static const storeCashback = "${_prefix}store_cashback.png";
+  static const products2 = "${_prefix}products2.png";
+  static const logo = "${_prefix}logo.png";
 }

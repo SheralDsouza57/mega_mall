@@ -97,6 +97,13 @@ flutter:
     - assets/images/product8.png
     - assets/images/product9.png
     - assets/images/product10.png
+    - assets/images/store_cashback.png 
+    - assets/images/buy_coins.png
+    - assets/images/offers.png
+    - assets/images/pay_at_store.png
+    - assets/images/upi_image.png
+    - assets/images/products2.png
+    - assets/images/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
