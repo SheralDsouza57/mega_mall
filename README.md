@@ -1,18 +1,10 @@
 # mega_mall
 
-A new Flutter project.
+Task:
 
-## Getting Started
+Refer to the file task.dart, task_model.dart and task_data.dart
 
-This project is a starting point for a Flutter application.
+![WhatsApp Image 2024-09-24 at 5 22 19 PM](https://github.com/user-attachments/assets/6b30cfd9-40e7-4aa1-a534-e90ede190a00)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 https://github.com/user-attachments/assets/62cce298-cb07-4216-b1ff-5773170df82b
